@@ -19,13 +19,14 @@ VIEW LIVE: [here](https://agitated-wescoff-28270c.netlify.app/)
 4. Create config.json file using sample_config.json in /src directory
 ```json
 {
-    "key": "YOUR_API_KEY",
-    "dex": "YOUR_DECENTALIZED_EXCHANGE",
+    "key": "YOUR_API_KEY", // covalent API key
+    "dex": "YOUR_DECENTALIZED_EXCHANGE", // covalent dex ID ie. sushiswap 
     "gecko_enabled": true
 }
 ```
+5. npm start
 
-## See src/ for more details
+See src/ for more details
 
 ## Main Dash
 ![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img1.png)
