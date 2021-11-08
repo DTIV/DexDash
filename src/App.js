@@ -30,7 +30,6 @@ const dex = admin.dex
 const key = admin.key
 const geckoEnabled = admin.gecko_enabled
 function App() {
-
   const [getChain, setChain] = useState(1)
   const onChanger = (e) => {
     setChain(parseInt(e.target.value))
@@ -49,8 +48,7 @@ function App() {
                 {/* ADD OR REMOVE CHAINS HERE */}
             </select>
           </div>
-        </nav>
-        
+        </nav> 
         <Menu />   
         <Route exact path="/assets" render={(props) => (
           <div id="dex-sec">
@@ -71,7 +69,6 @@ function App() {
       </div>
     </Router>
   );
-
 }
 
 export default App;

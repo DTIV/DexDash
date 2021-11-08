@@ -36,7 +36,6 @@ const Yield = (props) => {
                         e.preventDefault();
                         document.getElementById('loader').classList.remove('hide')
                         FarmingStats(getAddr,props.covkey, props.chain,setStats,0,100)
-
                     }}>
                         <div>
                             <input className="farm-input" type="text" placeholder="Enter Address" onChange={(e) => (

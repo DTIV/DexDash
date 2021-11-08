@@ -30,7 +30,6 @@ const Asset = (props) => {
     function goPrev(){
         history.goBack()
     }
-
     // HOOKS
     const [getExBal, setExBal] = useState(false)
     const isMounted = useIsMounted()
@@ -53,7 +52,7 @@ const Asset = (props) => {
                     width={100}
                 />    
             </div>    
-         )
+        )
     }else{
         if(getExBal.data.sushiswap.balances[0]){
             const pool_token = getExBal.data.sushiswap.balances[0].pool_token
@@ -82,9 +81,7 @@ const Asset = (props) => {
                 </div>
             )
         }
-        
     }
-    
 }
 
 export default Asset

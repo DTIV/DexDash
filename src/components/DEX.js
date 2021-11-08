@@ -60,12 +60,10 @@ const DEX = (props) => {
             data[i] = infinity
         }
     }
-
     function toggleFilter(){
         var classObj = document.getElementById('screener');
         classObj.classList.toggle('hide')
     }
-
     function Results(e){
         if(isMounted){
             setResults(e.target.value)
@@ -83,7 +81,6 @@ const DEX = (props) => {
             DEXAssets(dex,admin.key, chain,setAssets, page_num, getResults)
         }
     }
-    
     function getPrev(){
         document.getElementById('asset-list').classList.add('hide')
         document.getElementById('loader').classList.remove('hide')
@@ -101,7 +98,6 @@ const DEX = (props) => {
             setAssets(false)
         }
     } 
-
     if(loading){
         if(assets && loader){
             assets.classList.add('hide')
@@ -113,7 +109,6 @@ const DEX = (props) => {
             loader.classList.add('hide')
         }
     }
- 
     if(newAssets){
         var page_num = newAssets.value.data.pagination.page_number
         var has_more = newAssets.value.data.pagination.has_more
@@ -125,7 +120,6 @@ const DEX = (props) => {
                 document.getElementById('loader').classList.add('hide')
             }
         }
-
         return (
             <div className="dex-wrap" key={dex}>
                 <div className="back-wrap">

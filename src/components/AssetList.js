@@ -29,6 +29,15 @@ const AssetList = (props) => {
         setChain(props.chain)
     });
 
+    const dexAssetList = props.assets.value.data.items
+    var swap = props.data[0]
+    var fee = props.data[1]
+    var quote = props.data[2]
+    var liq = props.data[3]
+    var supply = props.data[4]
+    var vol = props.data[5]
+    var chain = getChain
+
     if(props.loading){
         if(document.getElementById('asset-list')){
             document.getElementById('asset-list').classList.add('hide')
@@ -42,7 +51,6 @@ const AssetList = (props) => {
                     color="black"
                     height={100}
                     width={100}
-                    // timeout={3000} //3 secs
                 />    
             </div>    
         )
@@ -52,16 +60,6 @@ const AssetList = (props) => {
             document.getElementById('loader').classList.add('hide')
         }
     }
-
-    const dexAssetList = props.assets.value.data.items
-    var swap = props.data[0]
-    var fee = props.data[1]
-    var quote = props.data[2]
-    var liq = props.data[3]
-    var supply = props.data[4]
-    var vol = props.data[5]
-    var chain = getChain
-
     return dexAssetList.filter((asset) => (asset.swap_count_24h <= swap) 
         && (asset.fee_24h_quote <= fee)
         && (asset.quote_rate <= quote)
@@ -97,7 +95,6 @@ const AssetList = (props) => {
                 </div>
             </div>
         </Link>
-        
     ))
 }
 
