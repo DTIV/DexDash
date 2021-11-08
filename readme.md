@@ -31,7 +31,7 @@ See src/ for more details
 ![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img1.png)
 
 # ASSET PAIRS
-![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img2.png)
+![alt text](https://github.com/DTIV/DexDash/blob/067470b8b5ed12a4f07f0f2adb9270176b83f43c/img/img2.png)
 
 # YIELD FARMS
-![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img3.png)
+![alt text](https://github.com/DTIV/DexDash/blob/067470b8b5ed12a4f07f0f2adb9270176b83f43c/img/img3.png)
