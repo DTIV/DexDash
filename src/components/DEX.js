@@ -102,7 +102,6 @@ const DEX = (props) => {
         }
     } 
 
-
     if(loading){
         if(assets && loader){
             assets.classList.add('hide')
@@ -139,7 +138,6 @@ const DEX = (props) => {
                             <div>
                                 <button className={`btn ${page_num > 0 ? 'active': 'hide'}`} onClick={getPrev}>Previous</button>
                             </div>
-                            
                             <select name="Results" id="results" defaultValue="25" onChange={(e) => Results(e)}>
                                 <option value="100">100</option>
                                 <option value="50">50</option>
@@ -148,7 +146,6 @@ const DEX = (props) => {
                             <div>
                                 <button className={`btn ${has_more ? 'active': 'hide'}`} onClick={getNext}>Next</button>
                             </div>
-                            
                         </div>
                     </div>
                     <div id="screener" className="hide">
@@ -178,7 +175,6 @@ const DEX = (props) => {
                         color="black"
                         height={100}
                         width={100}
-                        // timeout={3000} //3 secs
                     />    
                 </div>    
                 <section id="asset-list">
@@ -194,12 +190,10 @@ const DEX = (props) => {
                     color="black"
                     height={100}
                     width={100}
-                    // timeout={3000} //3 secs
                 />    
             </div>    
         )
     }
-    
 }
 
 export default DEX

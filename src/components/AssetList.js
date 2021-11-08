@@ -24,10 +24,11 @@ import { useState, useEffect } from 'react';
 
 const AssetList = (props) => {
     const [getChain, setChain] = useState(props.chain)
+    
     useEffect(() => {
         setChain(props.chain)
     });
-    
+
     if(props.loading){
         if(document.getElementById('asset-list')){
             document.getElementById('asset-list').classList.add('hide')

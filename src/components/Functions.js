@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import { useRef, useEffect} from 'react'
 
 export function BalanceList(key, chain, address, setBalances){
+    // Return a list of all ERC20 and NFT token balances along with their current spot prices
     chain = chain.toString()
     const endpoint = chain+'/address/'+address+'/balances_v2'
     const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?key="+key
@@ -30,6 +31,7 @@ export function BalanceList(key, chain, address, setBalances){
 }
 
 export function useIsMounted() {
+  // HOOKS MOUNT
   const isMounted = useRef(false);
   useEffect(() => {
     isMounted.current = true;
@@ -39,6 +41,7 @@ export function useIsMounted() {
 }
 
 export function Chains(key){
+  // Get all chains
   const endpoint = 'chains'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?key="+key
   fetch(url)
@@ -49,6 +52,7 @@ export function Chains(key){
 }
 
 export function DEXAssets(dex, key, chain, setAssets, pageNo, pageSize){
+  //Return a paginated list of Sushiswap pools sorted by exchange volume
   chain = chain.toString()
   const endpoint = chain+'/networks/'+dex+'/assets'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?page-number="+pageNo+"&page-size="+pageSize+"&key="+key
@@ -66,6 +70,7 @@ export function DEXAssets(dex, key, chain, setAssets, pageNo, pageSize){
 }
 
 export function FarmingStats(address, key, chain, setStats, pageNo, pageSize){
+  //Get farming positions on Uniswap, Sushiswap, and Harvest.
   chain = chain.toString()
   const endpoint = chain+'/address/'+address+'/stacks/farming/positions'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?page-number="+pageNo+"&page-size="+pageSize+"&key="+key
@@ -105,14 +110,14 @@ export function getExchangeBal(key,chain,dex,address, setExBal){
     })
 }
 
-export function getDEXHealth(key,chain,dex, setHealth){
+export function getDEXHealth(key,chain,dex){
   chain = chain.toString()
-  const endpoint = '1/xy=k/sushiswap/health'
+  const endpoint = '1/xy=k/'+dex+'/health'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?key="+key
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      setHealth(data)
+      localStorage.setItem('health', JSON.stringify(data))
     })
 }
 

@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { getCGData, getDEXHealth } from './Functions';
 import Loader from "react-loader-spinner";
@@ -25,30 +25,28 @@ import { BsMedium, BsDiscord, BsTwitter } from "react-icons/bs";
 import { ImYoutube } from "react-icons/im";
 import { CgWebsite } from "react-icons/cg";
 
+
 const Showcase = (props) => {
     const [getGecko, setGecko] = useState(false)
-    const [getHealth, setHealth] = useState(false)
     const dex = props.dex.replace('swap', '')
     if(props.enabled){
-        if(!getGecko | !getHealth){
+        if(!getGecko | !localStorage.getItem('health')){
             getCGData(dex, setGecko)
-            getDEXHealth(props.covkey,props.chain,props.dex,setHealth)
+            getDEXHealth(props.covkey,props.chain,props.dex)
             return(
-                <div id="loader" className="loading hide">
+                <div id="loader" className="loading">
                     <Loader
                         type="TailSpin"
                         color="black"
                         height={100}
                         width={100}
-                        // timeout={3000} //3 secs
                     />    
                 </div>
             )
         }else{
-            var i = 0
-            function refreshIndicators() {
-                const bar = document.getElementById('sent-bar')
-                if (bar) {
+            var i = 0;
+            async function refreshIndicators(bar) {
+                if(document.getElementById("sent-bar")){
                     if (i == 0) {
                         i = 1;
                         var elem = document.getElementById("myBar");
@@ -67,14 +65,16 @@ const Showcase = (props) => {
                             }
                         }
                     }
-                } else {
+                }else{
                     clearInterval(id);
-                        i = 0;
+                    i = 0;
+                    setTimeout(() => {refreshIndicators(document.getElementById("sent-bar"))},200)
                 }
             }
-            refreshIndicators(document.getElementById('sent-bar'))
+            refreshIndicators(document.getElementById("sent-bar"))
             const market = getGecko.market_data
             const links = getGecko.links
+            const getHealth = JSON.parse(localStorage.getItem('health'))
             return (
                 <div>
                     <div className="health-wrap">
@@ -84,7 +84,6 @@ const Showcase = (props) => {
                                 <div>{getHealth.data.items[0].latest_block_height}</div>
                                 <div>{getHealth.data.items[0].latest_block_signed_at.replace("T"," ").replace("Z","")}</div>
                             </div>
-                            
                         </div>
                         <div className="health-info">
                             <div className="sm-title">Synced Blocked Height</div>
@@ -92,7 +91,6 @@ const Showcase = (props) => {
                                 <div>{getHealth.data.items[0].synced_block_height}</div>
                                 <div>{getHealth.data.items[0].synced_block_signed_at.replace("T"," ").replace("Z","")}</div>
                             </div>
-                            
                         </div>
                     </div>
                     <div className="showcase-wrap">
@@ -169,27 +167,26 @@ const Showcase = (props) => {
                         </div>
                         <div className="socials">
                             <div className={`${links.blockchain_site ? 'social-link' : 'hide'}`}>
-                                <a className="mag-btn" href={ links.blockchain_site[0] } target="_blank"><GiMagnifyingGlass /></a>
+                                <a className="mag-btn" href={ links.blockchain_site[0] } target="_blank" rel="noreferrer"><GiMagnifyingGlass /></a>
                             </div>
                             <div className={`${links.announcement_url ? 'social-link' : 'hide'}`}>
-                                <a className="mag-btn" href={ links.announcement_url[0] } target="_blank"><BsMedium /></a>
+                                <a className="mag-btn" href={ links.announcement_url[0] } target="_blank" rel="noreferrer"><BsMedium /></a>
                             </div>
                             <div className={`${links.chat_url[0] ? 'social-link' : 'hide'}`}>
-                                <a className="mag-btn" href={ links.chat_url[0] } target="_blank"><BsDiscord /></a>
+                                <a className="mag-btn" href={ links.chat_url[0] } target="_blank" rel="noreferrer"><BsDiscord /></a>
                             </div>
                             <div className={`${links.chat_url[1] ? 'social-link' : 'hide'}`}>
-                                <a className="mag-btn" href={ links.chat_url[1] } target="_blank"><ImYoutube /></a>
+                                <a className="mag-btn" href={ links.chat_url[1] } target="_blank" rel="noreferrer"><ImYoutube /></a>
                             </div>
                             <div className={`${links.homepage[0] ? 'social-link' : 'hide'}`}>
-                                <a className="mag-btn" href={ links.homepage[0] } target="_blank"><CgWebsite /></a>
+                                <a className="mag-btn" href={ links.homepage[0] } target="_blank" rel="noreferrer"><CgWebsite /></a>
                             </div>
                             <div className={`${links.twitter_screen_name ? 'social-link' : 'hide'}`}>
-                                <a className="mag-btn" href={ 'http://www.twitter.com/'+links.twitter_screen_name } target="_blank"><BsTwitter /></a>
+                                <a className="mag-btn" href={ 'http://www.twitter.com/'+links.twitter_screen_name } target="_blank" rel="noreferrer"><BsTwitter /></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
             )
         }
     }else{
@@ -210,7 +207,6 @@ const Showcase = (props) => {
             </div>
         )
     }
-    
 }
 
 export default Showcase

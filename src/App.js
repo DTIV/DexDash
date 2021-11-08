@@ -26,11 +26,6 @@ import Showcase from './components/Showcase'
 import Yield from './components/Yield'
 
 let admin = require('./config.json')
-//Pools, swaps, liquidity, volumes
-//Lending and borrowing stats
-//Trading pair positions, leverage and level of profitability
-//Fees x
-//Yield farmers
 const dex = admin.dex
 const key = admin.key
 const geckoEnabled = admin.gecko_enabled
