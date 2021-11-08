@@ -25,5 +25,5 @@ SETUP
 }
 ```
 
-See src/components for more details
+See src/ for more details
 

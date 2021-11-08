@@ -1,3 +1,18 @@
+
+App.js
+--------------------------
+- Add desired networks to the select menu along with network id as a value.
+```html
+<select name="" defaultValue={getChain} id="chain-select" onChange={onChanger}> 
+    <option value="1">ETH</option>
+    <option value="137">MATIC</option>
+    <option value="56">BSC</option>
+    <option value="43114">AVAX</option>
+    <!-- ADD OR REMOVE CHAINS HERE -->
+</select>
+```
+
+----------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
