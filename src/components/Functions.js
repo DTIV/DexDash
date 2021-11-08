@@ -89,6 +89,7 @@ export function FarmingStats(address, key, chain, setStats, pageNo, pageSize){
 
 
 export function getPortfolio(key,chain,address, setPortfolio){
+  //Given chain_id and wallet address, return wallet value for the last 30 days at 24 hour timestamps.
   chain = chain.toString()
   const endpoint = chain+'/address/'+address+'/portfolio_v2'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?key="+key
@@ -100,6 +101,7 @@ export function getPortfolio(key,chain,address, setPortfolio){
 }
 
 export function getExchangeBal(key,chain,dex,address, setExBal){
+  // Get Sushiswap address exchange balances. Passing in an ENS resolves automatically
   chain = chain.toString()
   const endpoint = chain+'/address/'+address+'/stacks/'+dex+'/balances'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?key="+key
@@ -111,6 +113,7 @@ export function getExchangeBal(key,chain,dex,address, setExBal){
 }
 
 export function getDEXHealth(key,chain,dex){
+  //DEX health
   chain = chain.toString()
   const endpoint = '1/xy=k/'+dex+'/health'
   const url = 'https://api.covalenthq.com/v1/'+endpoint+"/?key="+key
@@ -122,6 +125,7 @@ export function getDEXHealth(key,chain,dex){
 }
 
 export function getCGData(id, setGecko){
+  //Coingecko data
   const endpoint = 'coins/'+id
   const url = 'https://api.coingecko.com/api/v3/'+endpoint
   fetch(url)
