@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import  { BrowserRouter as Router, Route} from 'react-router-dom'
 import { useState } from 'react';
 import DEX from './components/DEX';
-import Nav from './components/Nav';
+import Logo from './components/Logo';
 import Asset from './components/Asset';
 import Menu from './components/Menu';
 import Showcase from './components/Showcase'
@@ -38,17 +38,18 @@ function App() {
   return (
     <Router>
       <div id="main-container">
-        <div className="nav-wrap">
-          <Nav />
+        <nav className="nav-wrap">
+          <Logo />
           <div className="chain-wrap">
             <select name="" defaultValue={getChain} id="chain-select" onChange={onChanger}> 
                 <option value="1">ETH</option>
                 <option value="137">MATIC</option>
                 <option value="56">BSC</option>
                 <option value="43114">AVAX</option>
+                {/* ADD OR REMOVE CHAINS HERE */}
             </select>
           </div>
-        </div>
+        </nav>
         
         <Menu />   
         <Route exact path="/assets" render={(props) => (

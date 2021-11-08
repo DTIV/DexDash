@@ -18,14 +18,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from 'react'
 
-const Nav = () => {
+const Logo = () => {
     return (
-        <nav id="main-navbar">
-            <div className="logo-wrap">
-                <p className="logo-txt dash-logo"><span className='dex-logo'>DEX</span>Dash</p>
-            </div>
-        </nav>
+        <div className="logo-wrap">
+            <p className="logo-txt dash-logo"><span className='dex-logo'>DEX</span>Dash</p>
+        </div>
     )
 }
 
-export default Nav
+export default Logo
