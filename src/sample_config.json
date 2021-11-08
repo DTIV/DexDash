@@ -1,0 +1,5 @@
+{
+    "key": "YOUR_API_KEY",
+    "dex": "YOUR_DECENTALIZED_EXCHANGE",
+    "gecko_enabled": true
+}
