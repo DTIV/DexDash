@@ -1,5 +1,5 @@
 
-App.js
+# App.js
 --------------------------
 - Add desired networks to the select menu along with network id as a value.
 ```html
@@ -13,7 +13,7 @@ App.js
 ```
 
 ----------------------------------
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
