@@ -27,5 +27,11 @@ SETUP
 
 See src/ for more details
 
+# Main Dash
 ![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img1.png)
 
+# ASSET PAIRS
+![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img2.png)
+
+# YIELD FARMS
+![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img3.png)
