@@ -27,5 +27,5 @@ SETUP
 
 See src/ for more details
 
-![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img1.png"MainScreen")
+![alt text](https://github.com/DTIV/DexDash/blob/d6d0df0eac11ea9b91545cb0624959f58a34b0f0/img/img1.png)
 
